@@ -1,0 +1,14 @@
+env:
+  global:
+    secure: "qUyVKyiiSEy2SwkPmMjdvOKNQgecEbNANZhp39EHMXWNq2TvOZDmJf2KWuP1QJP/2hkpyEwr0ObLRkULzqokCrBPo4yNBVlIY7LJ2pVhqNCWZbL91IZsya6XWOZGbw1nv4Xi0Mi8EuIchQ9E/OTp+KgnMVcD/KozOqChgsfhfvkVKvbqsPQX2rE0cISKfbFSZ7J2BcOxmA3GnMnmgcZeBpnGLoU43Xj1FuwlJZPfd0305PhaFQs4qV2SQutqbqiHCR4Cnzzr+0EUOeFUzu9DTcr3jrCrBhjD1LU7iOW5NiwpbiMn2gYJWkB4PS1mnBNbFvqVnJshkrV7lKDQJ4IoczzRr+wVuSwAUa3MO2Lc6Cg8E6jRhl4lkKesFZ6+IXKMF9FA0XNdqVbYteLNMPgZMf3hKYEBcAwo+UGZINvJ7JMdKSKbv85ECL3Ql+DzcpGU0VVM/w6hwUYaDVsO7TnOOpBhoJVtNh6eL0EmkqGIRE87I0UeK0n5ASvsEYjXxBAxDDyAwqXx6az/WADhhQ2hgC+YObltIxPuiOERgAkF2wPN3pKh8NLCbym57Nt4a2117iPVkemMNt5yagISnuY9Z5hmwPOUi5ThnlaZqBFBKK3yYpbeD+FwBPlnQDZ01pjsLTjJv5jb/I7WXEYfREDkWaE8/WJ2TkU1W3p4peFBszE="
+language: java
+jdk: oraclejdk8
+install:
+  - git config --global user.email "travis@sw4j.org"
+  - git config --global user.name "travis-ci"
+script: mvn clean install
+after_success:
+  - mvn post-site scm-publish:publish-scm
+  - cd target/scmpublish-checkout
+  - git commit -a -m "Automatic created documentation"
+  - git push -fq https://${GH_TOKEN}@github.com/uweplonus/findbugs-examples.git gh-pages:gh-pages
