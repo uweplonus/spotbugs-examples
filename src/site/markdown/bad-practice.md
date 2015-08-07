@@ -5,6 +5,7 @@
 * [CN: Class implements Cloneable but does not define or use clone method](#CN:_Class_implements_Cloneable_but_does_not_define_or_use_clone_method)
 * [CN: clone method does not call super.clone()](#CN:_clone_method_does_not_call_super.clone)
 * [CN: Class defines clone() but doesn't implement Cloneable](#CN:_Class_defines_clone_but_doesnt_implement_Cloneable)
+* [CNT: Rough value of known constant found](#CNT:_Rough_value_of_known_constant_found)
 
 ## BC: Equals method should not assume anything about the type of its argument
 
@@ -100,4 +101,18 @@ In this example the created class overrides the method `clone()` but does not im
 interface `Cloneable`. This is at least uncommon and not expected.
 
 Project example: [`NoCloneable`](./xref/de/sw4j/examples/clone/NoCloneable.html#L26)
+
+## CNT: Rough value of known constant found
+
+[Bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CNT_ROUGH_CONSTANT_VALUE)
+
+Example for bug:
+
+```
+        circumference = diameter * 3.141;
+```
+
+In this example the circumference of a circle is calculated. The value ̣π is is inserted directly.
+
+Project example: [`KnownConstant`](./xref/de/sw4j/examples/numbers/KnownConstant.html#L25)
 
