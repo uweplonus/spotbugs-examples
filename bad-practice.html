@@ -117,6 +117,8 @@
 <li><a href="#CN:_Class_implements_Cloneable_but_does_not_define_or_use_clone_method">CN: Class implements Cloneable but does not define or use clone method</a></li>
   
 <li><a href="#CN:_clone_method_does_not_call_super.clone">CN: clone method does not call super.clone()</a></li>
+  
+<li><a href="#CN:_Class_defines_clone_but_doesnt_implement_Cloneable">CN: Class defines clone() but doesn&#x2019;t implement Cloneable</a></li>
 </ul>
 <div class="section">
 <h2><a name="BC:_Equals_method_should_not_assume_anything_about_the_type_of_its_argument"></a>BC: Equals method should not assume anything about the type of its argument</h2>
@@ -176,6 +178,20 @@
 </pre></div></div>
 <p>In this example the created class does call the <tt>clone()</tt> method of the super class. Every class that implements the <tt>Cloneable</tt> must call the method <tt>super.clone()</tt> to ensure that the <tt>clone()</tt> returns the correct class.</p>
 <p>Project example: <a href="./xref/de/sw4j/examples/clone/NoSuperClone.html#L26"><tt>NoSuperClone</tt></a></p></div>
+<div class="section">
+<h2><a name="CN:_Class_defines_clone_but_doesnt_implement_Cloneable"></a>CN: Class defines clone() but doesn&#x2019;t implement Cloneable</h2>
+<p><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug description</a></p>
+<p>Example for bug:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">public class NoClone {
+    public Object clone() throws CloneNotSupportedException {
+        ...
+    }
+}
+</pre></div></div>
+<p>In this example the created class overrides the method <tt>clone()</tt> but does not implement the interface <tt>Cloneable</tt>. This is at least uncommon and not expected.</p>
+<p>Project example: <a href="./xref/de/sw4j/examples/clone/NoCloneable.html#L26"><tt>NoCloneable</tt></a></p></div>
                   </div>
             </div>
           </div>
