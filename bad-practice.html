@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20150807" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>FindBugs Examples &#x2013; FindBugs Examples</title>
+    <title>FindBugs Examples &#x2013; Bad Practice</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.4.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -59,17 +59,17 @@
                 <ul class="nav nav-list">
                     <li class="nav-header">Documentation</li>
                               
-      <li class="active">
-  
-            <a href="#"><span class="none"></span>Introduction</a>
-          </li>
-                
       <li>
   
-                          <a href="bad-practice.html" title="Bad Practice">
+                          <a href="index.html" title="Introduction">
           <span class="none"></span>
-        Bad Practice</a>
+        Introduction</a>
             </li>
+                
+      <li class="active">
+  
+            <a href="#"><span class="none"></span>Bad Practice</a>
+          </li>
                               <li class="nav-header">Project Documentation</li>
                                                                                                                                       
       <li>
@@ -106,14 +106,46 @@
                 
         <div id="bodyColumn"  class="span10" >
                                   
-            <h1>FindBugs Examples</h1>
-<p>This project contains examples for the bug detector FindBugs.</p>
-<p>For each category there is a page explaining the bugs in detail:</p>
+            <h1>Bad Practice</h1>
 
 <ul>
   
-<li><a href="./bad-practice.html">Bad practice</a></li>
+<li><a href="#BC:_Equals_method_should_not_assume_anything_about_the_type_of_its_argument">BC: Equals method should not assume anything about the type of its argument</a></li>
+  
+<li><a href="#BIT:_Check_for_sign_of_bitwise_operation">BIT: Check for sign of bitwise operation</a></li>
 </ul>
+<div class="section">
+<h2><a name="BC:_Equals_method_should_not_assume_anything_about_the_type_of_its_argument"></a>BC: Equals method should not assume anything about the type of its argument</h2>
+<p>Example for bug:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">    public boolean equals(Object o) {
+        Sample casted = (Sample)o;
+        ...
+    }
+</pre></div></div>
+<p>In this example a ClassCastException would be thrown because the object <tt>o</tt> is cast without check. The <a class="externalLink" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-"><tt>equals(Object)</tt></a> method should never throw any exception as this violates the contract.</p>
+<p>Project example: <a href="./xref/de/sw4j/examples/equals/EqualsAssume.html#L27"><tt>EqualsAssume</tt></a></p></div>
+<div class="section">
+<h2><a name="BIT:_Check_for_sign_of_bitwise_operation"></a>BIT: Check for sign of bitwise operation</h2>
+<p>Example for bug:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">    private static final int flag = 0x40000000;
+    public boolean bug(int value) {
+        boolean flagSet = ((value &amp; flag) &gt; 0);
+        ...
+    }
+</pre></div></div>
+<p>In this example the check (<tt>(value &amp; flag) &gt; 0</tt>) will fail when <tt>flag</tt> is a negative value (e.g. <tt>0x80000000</tt>). Then the result will be also negative.</p>
+<p>Project example: <a href="./xref/de/sw4j/examples/bitoperation/CheckSign.html#L27"><tt>CheckSign</tt></a></p>
+<div class="section">
+<h3><a name="See_also"></a>See also</h3>
+
+<ul>
+  
+<li>BIT: Check for sign of bitwise operation</li>
+</ul></div></div>
                   </div>
             </div>
           </div>
