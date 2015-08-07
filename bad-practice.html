@@ -113,9 +113,14 @@
 <li><a href="#BC:_Equals_method_should_not_assume_anything_about_the_type_of_its_argument">BC: Equals method should not assume anything about the type of its argument</a></li>
   
 <li><a href="#BIT:_Check_for_sign_of_bitwise_operation">BIT: Check for sign of bitwise operation</a></li>
+  
+<li><a href="#CN:_Class_implements_Cloneable_but_does_not_define_or_use_clone_method">CN: Class implements Cloneable but does not define or use clone method</a></li>
+  
+<li><a href="#CN:_clone_method_does_not_call_super.clone">CN: clone method does not call super.clone()</a></li>
 </ul>
 <div class="section">
 <h2><a name="BC:_Equals_method_should_not_assume_anything_about_the_type_of_its_argument"></a>BC: Equals method should not assume anything about the type of its argument</h2>
+<p><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">Bug description</a></p>
 <p>Example for bug:</p>
 
 <div class="source">
@@ -128,6 +133,7 @@
 <p>Project example: <a href="./xref/de/sw4j/examples/equals/EqualsAssume.html#L27"><tt>EqualsAssume</tt></a></p></div>
 <div class="section">
 <h2><a name="BIT:_Check_for_sign_of_bitwise_operation"></a>BIT: Check for sign of bitwise operation</h2>
+<p><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#BIT_SIGNED_CHECK">Bug description</a></p>
 <p>Example for bug:</p>
 
 <div class="source">
@@ -146,6 +152,30 @@
   
 <li>BIT: Check for sign of bitwise operation</li>
 </ul></div></div>
+<div class="section">
+<h2><a name="CN:_Class_implements_Cloneable_but_does_not_define_or_use_clone_method"></a>CN: Class implements Cloneable but does not define or use clone method</h2>
+<p><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#CN_IDIOM">Bug description</a></p>
+<p>Example for bug:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">public class NoClone implements Cloneable {
+    // no clone()
+}
+</pre></div></div>
+<p>In this example the created class does not override the <a class="externalLink" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#clone--"><tt>clone()</tt></a> method.</p>
+<p>Project example: <a href="./xref/de/sw4j/examples/clone/NoClone.html#L22"><tt>NoClone</tt></a></p></div>
+<div class="section">
+<h2><a name="CN:_clone_method_does_not_call_super.clone"></a>CN: clone method does not call super.clone()</h2>
+<p><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#CN_IDIOM_NO_SUPER_CALL">Bug description</a></p>
+<p>Example for bug:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">    public Object clone() throws CloneNotSupportedException {
+        // no call to super.clone();
+    }
+</pre></div></div>
+<p>In this example the created class does call the <tt>clone()</tt> method of the super class. Every class that implements the <tt>Cloneable</tt> must call the method <tt>super.clone()</tt> to ensure that the <tt>clone()</tt> returns the correct class.</p>
+<p>Project example: <a href="./xref/de/sw4j/examples/clone/NoSuperClone.html#L26"><tt>NoSuperClone</tt></a></p></div>
                   </div>
             </div>
           </div>
