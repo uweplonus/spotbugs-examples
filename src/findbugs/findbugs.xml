@@ -12,6 +12,9 @@
   <Match>
     <Bug pattern="CN_IDIOM_NO_SUPER_CALL"/>
   </Match>
+  <Match>
+    <Bug pattern="CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE"/>
+  </Match>
 <!--
 <Match>
 <Bug pattern="ML_SYNC_ON_FIELD_TO_GUARD_CHANGING_THAT_FIELD"/>

@@ -4,6 +4,7 @@
 * [BIT: Check for sign of bitwise operation](#BIT:_Check_for_sign_of_bitwise_operation)
 * [CN: Class implements Cloneable but does not define or use clone method](#CN:_Class_implements_Cloneable_but_does_not_define_or_use_clone_method)
 * [CN: clone method does not call super.clone()](#CN:_clone_method_does_not_call_super.clone)
+* [CN: Class defines clone() but doesn't implement Cloneable](#CN:_Class_defines_clone_but_doesnt_implement_Cloneable)
 
 ## BC: Equals method should not assume anything about the type of its argument
 
@@ -80,3 +81,23 @@ that implements the `Cloneable` must call the method `super.clone()` to ensure t
 returns the correct class.
 
 Project example: [`NoSuperClone`](./xref/de/sw4j/examples/clone/NoSuperClone.html#L26)
+
+## CN: Class defines clone() but doesn't implement Cloneable
+
+[Bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE)
+
+Example for bug:
+
+```
+public class NoClone {
+    public Object clone() throws CloneNotSupportedException {
+        ...
+    }
+}
+```
+
+In this example the created class overrides the method `clone()` but does not implement the
+interface `Cloneable`. This is at least uncommon and not expected.
+
+Project example: [`NoCloneable`](./xref/de/sw4j/examples/clone/NoCloneable.html#L26)
+
