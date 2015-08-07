@@ -204,7 +204,7 @@
   <distributionManagement>
     <site>
       <id>github</id>
-      <url>scm:git:ssh://git@github.com:uweplonus/findbugs-examples.git</url>
+      <url>scm:git:https://github.com/uweplonus/findbugs-examples.git</url>
     </site>
   </distributionManagement>
 
