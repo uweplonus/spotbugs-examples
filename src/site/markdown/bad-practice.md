@@ -37,3 +37,5 @@ In this example the check (`(value & flag) > 0`) will fail when `flag` is a nega
 
 Project example: [`CheckSign`](./xref/de/sw4j/examples/bitoperation/CheckSign.html#L27)
 
+### See also
+* BIT: Check for sign of bitwise operation
