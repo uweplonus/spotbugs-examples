@@ -169,8 +169,8 @@
         <configuration>
           <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
           <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
-          <webAccessUrl>https://github.com/sw4j-org/api-sniffer</webAccessUrl>
-          <developerConnection>scm:git:ssh://git@github.com:sw4j-org/api-sniffer.git</developerConnection>
+          <webAccessUrl>https://github.com/uweplonus/findbugs-examples</webAccessUrl>
+          <developerConnection>scm:git:ssh://git@github.com:uweplonus/findbugs-examples.git</developerConnection>
         </configuration>
         <reportSets>
           <reportSet>
