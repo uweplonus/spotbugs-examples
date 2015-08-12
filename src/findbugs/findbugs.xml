@@ -19,6 +19,9 @@
   <Match>
     <Bug pattern="CNT_ROUGH_CONSTANT_VALUE"/>
   </Match>
+  <Match>
+    <Bug pattern="CO_ABSTRACT_SELF"/>
+  </Match>
 <!--
 <Match>
 <Bug pattern="ML_SYNC_ON_FIELD_TO_GUARD_CHANGING_THAT_FIELD"/>
@@ -1009,9 +1012,6 @@
 </Match>
 <Match>
 <Bug pattern="HE_INHERITS_EQUALS_USE_HASHCODE"/>
-</Match>
-<Match>
-<Bug pattern="CO_ABSTRACT_SELF"/>
 </Match>
 <Match>
 <Bug pattern="EC_BAD_ARRAY_COMPARE"/>

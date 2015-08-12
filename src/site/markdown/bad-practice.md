@@ -6,10 +6,11 @@
 * [CN: clone method does not call super.clone()](#CN:_clone_method_does_not_call_super.clone)
 * [CN: Class defines clone() but doesn't implement Cloneable](#CN:_Class_defines_clone_but_doesnt_implement_Cloneable)
 * [CNT: Rough value of known constant found](#CNT:_Rough_value_of_known_constant_found)
+* [Co: Abstract class defines covariant compareTo() method](#Co:_Abstract_class_defines_covariant_compareTo_method)
 
 ## BC: Equals method should not assume anything about the type of its argument
 
-[Bug description](http://findbugs.sourceforge.net/bugDescriptions.html#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS)
+[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS)
 
 Example for bug:
 
@@ -28,7 +29,7 @@ Project example: [`EqualsAssume`](./xref/de/sw4j/examples/equals/EqualsAssume.ht
 
 ## BIT: Check for sign of bitwise operation
 
-[Bug description](http://findbugs.sourceforge.net/bugDescriptions.html#BIT_SIGNED_CHECK)
+[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#BIT_SIGNED_CHECK)
 
 Example for bug:
 
@@ -50,7 +51,7 @@ Project example: [`CheckSign`](./xref/de/sw4j/examples/bitoperation/CheckSign.ht
 
 ## CN: Class implements Cloneable but does not define or use clone method
 
-[Bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CN_IDIOM)
+[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CN_IDIOM)
 
 Example for bug:
 
@@ -67,7 +68,7 @@ Project example: [`NoClone`](./xref/de/sw4j/examples/clone/NoClone.html#L22)
 
 ## CN: clone method does not call super.clone()
 
-[Bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CN_IDIOM_NO_SUPER_CALL)
+[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CN_IDIOM_NO_SUPER_CALL)
 
 Example for bug:
 
@@ -85,7 +86,7 @@ Project example: [`NoSuperClone`](./xref/de/sw4j/examples/clone/NoSuperClone.htm
 
 ## CN: Class defines clone() but doesn't implement Cloneable
 
-[Bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE)
+[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE)
 
 Example for bug:
 
@@ -104,7 +105,7 @@ Project example: [`NoCloneable`](./xref/de/sw4j/examples/clone/NoCloneable.html#
 
 ## CNT: Rough value of known constant found
 
-[Bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CNT_ROUGH_CONSTANT_VALUE)
+[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CNT_ROUGH_CONSTANT_VALUE)
 
 Example for bug:
 
@@ -116,3 +117,22 @@ In this example the circumference of a circle is calculated. The value ̣π is i
 
 Project example: [`KnownConstant`](./xref/de/sw4j/examples/numbers/KnownConstant.html#L25)
 
+
+## Co: Abstract class defines covariant compareTo() method
+
+[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CO_ABSTRACT_SELF)
+
+Example for bug:
+
+```
+public abstract class Covariant implements Comparable<Covariant> {
+    @Override
+    public abstract int compareTo(Covariant o);
+}
+```
+
+In this example the class `Covariant` implements the interface `Comparable` and implements the
+method `compareTo` with itself as argument. This is problematic as subclasses cannot override this
+method with another argument.
+
+Project example: [`Covariant`](./xref/de/sw4j/examples/compare/Covariant.html#L22)
