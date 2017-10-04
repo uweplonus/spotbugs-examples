@@ -34,14 +34,14 @@ Project example: [`EqualsAssume`](./xref/de/sw4j/examples/equals/EqualsAssume.ht
 Example for bug:
 
 ```
-    private static final int flag = 0x40000000;
+    private static final int FLAG = 0x40000000;
     public boolean bug(int value) {
-        boolean flagSet = ((value & flag) > 0);
+        boolean flagSet = ((value & FLAG) > 0);
         ...
     }
 ```
 
-In this example the check (`(value & flag) > 0`) will fail when `flag` is a negative value
+In this example the check (`(value & FLAG) > 0`) will fail when `FLAG` is a negative value
 (e.g. `0x80000000`). Then the result will be also negative.
 
 Project example: [`CheckSign`](./xref/de/sw4j/examples/bitoperation/CheckSign.html#L27)

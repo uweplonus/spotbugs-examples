@@ -21,10 +21,10 @@ package de.sw4j.examples.bitoperation;
  */
 public class CheckSign {
 
-    private static final int flag = 0x40000000;
+    private static final int FLAG = 0x40000000;
 
     public boolean bug(int value) {
-        boolean flagSet = ((value & flag) > 0);
+        boolean flagSet = ((value & FLAG) > 0);
         return flagSet;
     }
 
