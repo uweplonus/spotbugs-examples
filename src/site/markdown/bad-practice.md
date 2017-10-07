@@ -24,6 +24,26 @@ better to use a constant (e.g. [`Math.PI`](https://docs.oracle.com/javase/8/docs
 Project example: [`KnownConstant`](./xref/de/sw4j/examples/numbers/KnownConstant.html#L25)
 
 
+## NP: Method with Boolean return type returns explicit null
+
+[SpotBugs bug description](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#np-method-with-boolean-return-type-returns-explicit-null-np-boolean-return-null)
+
+Example for bug:
+
+```
+    public Boolean booleanMethod() {
+        return null;
+    }
+```
+
+In this example a method with the return type [`Boolean`](https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html)
+returns `null` directly. This will be found by spotbugs and remarked as bug.
+
+Project example: [`BooleanReturnsNull`](./xref/de/sw4j/examples/nullpointer/BooleanReturnsNull.html#L25)
+
+This bug will not be found when a variable is defined which can return `null`.
+
+
 ## BC: Equals method should not assume anything about the type of its argument
 
 [SpotBugs bug description](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#bc-equals-method-should-not-assume-anything-about-the-type-of-its-argument-bc-equals-method-should-work-for-all-objects)

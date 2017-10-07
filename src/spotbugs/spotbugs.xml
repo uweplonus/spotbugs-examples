@@ -2,6 +2,12 @@
 <FindBugsFilter>
   <!-- Bad Practice -->
   <Match>
+    <Bug pattern="CNT_ROUGH_CONSTANT_VALUE"/>
+  </Match>
+  <Match>
+    <Bug pattern="NP_BOOLEAN_RETURN_NULL"/>
+  </Match>
+  <Match>
     <Bug pattern="BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS"/>
   </Match>
   <Match>
@@ -15,9 +21,6 @@
   </Match>
   <Match>
     <Bug pattern="CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE"/>
-  </Match>
-  <Match>
-    <Bug pattern="CNT_ROUGH_CONSTANT_VALUE"/>
   </Match>
   <Match>
     <Bug pattern="CO_ABSTRACT_SELF"/>
@@ -478,9 +481,6 @@
 </Match>
 <Match>
 <Bug pattern="DM_STRING_CTOR"/>
-</Match>
-<Match>
-<Bug pattern="NP_BOOLEAN_RETURN_NULL"/>
 </Match>
 <Match>
 <Bug pattern="IC_INIT_CIRCULARITY"/>
