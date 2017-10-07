@@ -63,7 +63,7 @@
 <div class="section">
 <h2><a name="FindBugs_Bug_Detector_Report"></a>FindBugs Bug Detector Report</h2>
 <p>The following document contains the results of <a class="externalLink" href="http://findbugs.sourceforge.net">FindBugs</a></p>
-<p>FindBugs Version is <i>3.1.0-RC4</i></p>
+<p>FindBugs Version is <i>3.1.0-RC6</i></p>
 <p>Threshold is <i>low</i></p>
 <p>Effort is <i>max</i></p></div>
 <div class="section">
@@ -75,8 +75,8 @@
 <th>Errors</th>
 <th>Missing Classes</th></tr>
 <tr class="b">
-<td>7</td>
-<td>7</td>
+<td>8</td>
+<td>8</td>
 <td>0</td>
 <td>0</td></tr></table></div>
 <div class="section">
@@ -104,18 +104,21 @@
 <td><a href="#de.sw4j.examples.equals.EqualsAssume">de.sw4j.examples.equals.EqualsAssume</a></td>
 <td>1</td></tr>
 <tr class="b">
+<td><a href="#de.sw4j.examples.nullpointer.BooleanReturnsNull">de.sw4j.examples.nullpointer.BooleanReturnsNull</a></td>
+<td>1</td></tr>
+<tr class="a">
 <td><a href="#de.sw4j.examples.numbers.KnownConstant">de.sw4j.examples.numbers.KnownConstant</a></td>
 <td>1</td></tr></table></div><a name="de.sw4j.examples.bitoperation.CheckSign"></a>
 <div class="section">
 <h3><a name="de.sw4j.examples.bitoperation.CheckSign"></a>de.sw4j.examples.bitoperation.CheckSign</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>Check for sign of bitwise operation in de.sw4j.examples.bitoperation.CheckSign.bug(int)</td>
 <td>BAD_PRACTICE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#BIT_SIGNED_CHECK">BIT_SIGNED_CHECK</a></td>
@@ -124,13 +127,13 @@
 <div class="section">
 <h3><a name="de.sw4j.examples.clone.NoClone"></a>de.sw4j.examples.clone.NoClone</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>Class de.sw4j.examples.clone.NoClone implements Cloneable but does not define or use clone method</td>
 <td>BAD_PRACTICE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#CN_IDIOM">CN_IDIOM</a></td>
@@ -139,13 +142,13 @@
 <div class="section">
 <h3><a name="de.sw4j.examples.clone.NoCloneable"></a>de.sw4j.examples.clone.NoCloneable</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>de.sw4j.examples.clone.NoCloneable defines clone() but doesn't implement Cloneable</td>
 <td>BAD_PRACTICE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE</a></td>
@@ -154,13 +157,13 @@
 <div class="section">
 <h3><a name="de.sw4j.examples.clone.NoSuperClone"></a>de.sw4j.examples.clone.NoSuperClone</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>de.sw4j.examples.clone.NoSuperClone.clone() does not call super.clone()</td>
 <td>BAD_PRACTICE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#CN_IDIOM_NO_SUPER_CALL">CN_IDIOM_NO_SUPER_CALL</a></td>
@@ -169,13 +172,13 @@
 <div class="section">
 <h3><a name="de.sw4j.examples.compare.Covariant"></a>de.sw4j.examples.compare.Covariant</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>Abstract de.sw4j.examples.compare.Covariant defines compareTo(Covariant) method</td>
 <td>BAD_PRACTICE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#CO_ABSTRACT_SELF">CO_ABSTRACT_SELF</a></td>
@@ -184,28 +187,43 @@
 <div class="section">
 <h3><a name="de.sw4j.examples.equals.EqualsAssume"></a>de.sw4j.examples.equals.EqualsAssume</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>Equals method for de.sw4j.examples.equals.EqualsAssume assumes the argument is of type EqualsAssume</td>
 <td>BAD_PRACTICE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS</a></td>
 <td><a href="./xref/de/sw4j/examples/equals/EqualsAssume.html#L27">27</a></td>
-<td>Medium</td></tr></table></div><a name="de.sw4j.examples.numbers.KnownConstant"></a>
+<td>Medium</td></tr></table></div><a name="de.sw4j.examples.nullpointer.BooleanReturnsNull"></a>
 <div class="section">
-<h3><a name="de.sw4j.examples.numbers.KnownConstant"></a>de.sw4j.examples.numbers.KnownConstant</h3>
+<h3><a name="de.sw4j.examples.nullpointer.BooleanReturnsNull"></a>de.sw4j.examples.nullpointer.BooleanReturnsNull</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
+<tr class="a">
+<td>de.sw4j.examples.nullpointer.BooleanReturnsNull.booleanMethod() has Boolean return type and returns explicit null</td>
+<td>BAD_PRACTICE</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#NP_BOOLEAN_RETURN_NULL">NP_BOOLEAN_RETURN_NULL</a></td>
+<td><a href="./xref/de/sw4j/examples/nullpointer/BooleanReturnsNull.html#L25">25</a></td>
+<td>Medium</td></tr></table></div><a name="de.sw4j.examples.numbers.KnownConstant"></a>
+<div class="section">
+<h3><a name="de.sw4j.examples.numbers.KnownConstant"></a>de.sw4j.examples.numbers.KnownConstant</h3>
+<table border="0" class="table table-striped">
 <tr class="b">
+<th>Bug</th>
+<th>Category</th>
+<th>Details</th>
+<th>Line</th>
+<th>Priority</th></tr>
+<tr class="a">
 <td>Rough value of Math.PI found: 3.141</td>
 <td>BAD_PRACTICE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#CNT_ROUGH_CONSTANT_VALUE">CNT_ROUGH_CONSTANT_VALUE</a></td>

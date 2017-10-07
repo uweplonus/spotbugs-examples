@@ -59,6 +59,8 @@
 
 <ul>
   
+<li><a href="#CNT:_Rough_value_of_known_constant_found">CNT: Rough value of known constant found</a></li>
+  
 <li><a href="#BC:_Equals_method_should_not_assume_anything_about_the_type_of_its_argument">BC: Equals method should not assume anything about the type of its argument</a></li>
   
 <li><a href="#BIT:_Check_for_sign_of_bitwise_operation">BIT: Check for sign of bitwise operation</a></li>
@@ -69,10 +71,31 @@
   
 <li><a href="#CN:_Class_defines_clone_but_doesnt_implement_Cloneable">CN: Class defines clone() but doesn&#x2019;t implement Cloneable</a></li>
   
-<li><a href="#CNT:_Rough_value_of_known_constant_found">CNT: Rough value of known constant found</a></li>
-  
 <li><a href="#Co:_Abstract_class_defines_covariant_compareTo_method">Co: Abstract class defines covariant compareTo() method</a></li>
 </ul>
+<div class="section">
+<h2><a name="CNT:_Rough_value_of_known_constant_found"></a>CNT: Rough value of known constant found</h2>
+<p><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#cnt-rough-value-of-known-constant-found-cnt-rough-constant-value">SpotBugs bug description</a></p>
+<p>Example for bug:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">        circumference = diameter * 3.141;
+</pre></div></div>
+<p>In this example the circumference of a circle is calculated. The value &#x323;&#x3c0; is is inserted as an approximate value. It is better to use a constant (e.g. <a class="externalLink" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#PI"><tt>Math.PI</tt></a>).</p>
+<p>Project example: <a href="./xref/de/sw4j/examples/numbers/KnownConstant.html#L25"><tt>KnownConstant</tt></a></p></div>
+<div class="section">
+<h2><a name="NP:_Method_with_Boolean_return_type_returns_explicit_null"></a>NP: Method with Boolean return type returns explicit null</h2>
+<p><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#np-method-with-boolean-return-type-returns-explicit-null-np-boolean-return-null">SpotBugs bug description</a></p>
+<p>Example for bug:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">    public Boolean booleanMethod() {
+        return null;
+    }
+</pre></div></div>
+<p>In this example a method with the return type <a class="externalLink" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html"><tt>Boolean</tt></a> returns <tt>null</tt> directly. This will be found by spotbugs and remarked as bug.</p>
+<p>Project example: <a href="./xref/de/sw4j/examples/nullpointer/BooleanReturnsNull.html#L25"><tt>BooleanReturnsNull</tt></a></p>
+<p>This bug will not be found when a variable is defined which can return <tt>null</tt>.</p></div>
 <div class="section">
 <h2><a name="BC:_Equals_method_should_not_assume_anything_about_the_type_of_its_argument"></a>BC: Equals method should not assume anything about the type of its argument</h2>
 <p><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#bc-equals-method-should-not-assume-anything-about-the-type-of-its-argument-bc-equals-method-should-work-for-all-objects">SpotBugs bug description</a></p>
@@ -145,16 +168,6 @@
 </pre></div></div>
 <p>In this example the created class overrides the method <tt>clone()</tt> but does not implement the interface <tt>Cloneable</tt>. This is at least uncommon and not expected.</p>
 <p>Project example: <a href="./xref/de/sw4j/examples/clone/NoCloneable.html#L26"><tt>NoCloneable</tt></a></p></div>
-<div class="section">
-<h2><a name="CNT:_Rough_value_of_known_constant_found"></a>CNT: Rough value of known constant found</h2>
-<p><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#cnt-rough-value-of-known-constant-found-cnt-rough-constant-value">SpotBugs bug description</a></p>
-<p>Example for bug:</p>
-
-<div class="source">
-<div class="source"><pre class="prettyprint">        circumference = diameter * 3.141;
-</pre></div></div>
-<p>In this example the circumference of a circle is calculated. The value &#x323;&#x3c0; is is inserted directly.</p>
-<p>Project example: <a href="./xref/de/sw4j/examples/numbers/KnownConstant.html#L25"><tt>KnownConstant</tt></a></p></div>
 <div class="section">
 <h2><a name="Co:_Abstract_class_defines_covariant_compareTo_method"></a>Co: Abstract class defines covariant compareTo() method</h2>
 <p><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#co-abstract-class-defines-covariant-compareto-method-co-abstract-self">SpotBugs bug description</a></p>
