@@ -1,12 +1,28 @@
 # Bad Practice
 
+* [CNT: Rough value of known constant found](#CNT:_Rough_value_of_known_constant_found)
 * [BC: Equals method should not assume anything about the type of its argument](#BC:_Equals_method_should_not_assume_anything_about_the_type_of_its_argument)
 * [BIT: Check for sign of bitwise operation](#BIT:_Check_for_sign_of_bitwise_operation)
 * [CN: Class implements Cloneable but does not define or use clone method](#CN:_Class_implements_Cloneable_but_does_not_define_or_use_clone_method)
 * [CN: clone method does not call super.clone()](#CN:_clone_method_does_not_call_super.clone)
 * [CN: Class defines clone() but doesn't implement Cloneable](#CN:_Class_defines_clone_but_doesnt_implement_Cloneable)
-* [CNT: Rough value of known constant found](#CNT:_Rough_value_of_known_constant_found)
 * [Co: Abstract class defines covariant compareTo() method](#Co:_Abstract_class_defines_covariant_compareTo_method)
+
+## CNT: Rough value of known constant found
+
+[SpotBugs bug description](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#cnt-rough-value-of-known-constant-found-cnt-rough-constant-value)
+
+Example for bug:
+
+```
+        circumference = diameter * 3.141;
+```
+
+In this example the circumference of a circle is calculated. The value ̣π is is inserted as an approximate value. It is
+better to use a constant (e.g. [`Math.PI`](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#PI)).
+
+Project example: [`KnownConstant`](./xref/de/sw4j/examples/numbers/KnownConstant.html#L25)
+
 
 ## BC: Equals method should not assume anything about the type of its argument
 
@@ -102,21 +118,6 @@ In this example the created class overrides the method `clone()` but does not im
 interface `Cloneable`. This is at least uncommon and not expected.
 
 Project example: [`NoCloneable`](./xref/de/sw4j/examples/clone/NoCloneable.html#L26)
-
-## CNT: Rough value of known constant found
-
-[SpotBugs bug description](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#cnt-rough-value-of-known-constant-found-cnt-rough-constant-value)
-
-Example for bug:
-
-```
-        circumference = diameter * 3.141;
-```
-
-In this example the circumference of a circle is calculated. The value ̣π is is inserted directly.
-
-Project example: [`KnownConstant`](./xref/de/sw4j/examples/numbers/KnownConstant.html#L25)
-
 
 ## Co: Abstract class defines covariant compareTo() method
 
