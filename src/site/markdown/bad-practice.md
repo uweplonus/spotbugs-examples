@@ -10,7 +10,7 @@
 
 ## BC: Equals method should not assume anything about the type of its argument
 
-[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS)
+[SpotBugs bug description](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#bc-equals-method-should-not-assume-anything-about-the-type-of-its-argument-bc-equals-method-should-work-for-all-objects)
 
 Example for bug:
 
@@ -29,7 +29,7 @@ Project example: [`EqualsAssume`](./xref/de/sw4j/examples/equals/EqualsAssume.ht
 
 ## BIT: Check for sign of bitwise operation
 
-[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#BIT_SIGNED_CHECK)
+[SpotBugs bug description](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#bit-check-for-sign-of-bitwise-operation-bit-signed-check)
 
 Example for bug:
 
@@ -51,7 +51,7 @@ Project example: [`CheckSign`](./xref/de/sw4j/examples/bitoperation/CheckSign.ht
 
 ## CN: Class implements Cloneable but does not define or use clone method
 
-[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CN_IDIOM)
+[SpotBugs bug description](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#cn-class-implements-cloneable-but-does-not-define-or-use-clone-method-cn-idiom)
 
 Example for bug:
 
@@ -68,7 +68,7 @@ Project example: [`NoClone`](./xref/de/sw4j/examples/clone/NoClone.html#L22)
 
 ## CN: clone method does not call super.clone()
 
-[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CN_IDIOM_NO_SUPER_CALL)
+[SpotBugs bug description](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#cn-clone-method-does-not-call-super-clone-cn-idiom-no-super-call)
 
 Example for bug:
 
@@ -86,7 +86,7 @@ Project example: [`NoSuperClone`](./xref/de/sw4j/examples/clone/NoSuperClone.htm
 
 ## CN: Class defines clone() but doesn't implement Cloneable
 
-[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE)
+[SpotBugs bug description](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#cn-class-defines-clone-but-doesn-t-implement-cloneable-cn-implements-clone-but-not-cloneable)
 
 Example for bug:
 
@@ -105,7 +105,7 @@ Project example: [`NoCloneable`](./xref/de/sw4j/examples/clone/NoCloneable.html#
 
 ## CNT: Rough value of known constant found
 
-[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CNT_ROUGH_CONSTANT_VALUE)
+[SpotBugs bug description](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#cnt-rough-value-of-known-constant-found-cnt-rough-constant-value)
 
 Example for bug:
 
@@ -120,7 +120,7 @@ Project example: [`KnownConstant`](./xref/de/sw4j/examples/numbers/KnownConstant
 
 ## Co: Abstract class defines covariant compareTo() method
 
-[FindBugs bug description](http://findbugs.sourceforge.net/bugDescriptions.html#CO_ABSTRACT_SELF)
+[SpotBugs bug description](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#co-abstract-class-defines-covariant-compareto-method-co-abstract-self)
 
 Example for bug:
 

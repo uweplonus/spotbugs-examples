@@ -5,15 +5,15 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>de.sw4j.example</groupId>
-  <artifactId>findbugs</artifactId>
+  <artifactId>spotbugs</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>FindBugs Examples</name>
+  <name>SpotBugs Examples</name>
 
-  <description>This are examples for the bugs that FindBugs detects.</description>
+  <description>This are examples for the bugs that SpotBugs detects.</description>
 
-  <url>https://uweplonus.github.io/findbugs-examples/</url>
+  <url>https://uweplonus.github.io/spotbugs-examples/</url>
 
   <licenses>
     <license>
@@ -24,7 +24,7 @@
 
   <issueManagement>
     <system>GitHub</system>
-    <url>https://github.com/uweplonus/findbugs-examples/issues/</url>
+    <url>https://github.com/uweplonus/spotbugs-examples/issues/</url>
   </issueManagement>
 
   <developers>
@@ -43,18 +43,18 @@
     <netbeans.hint.license>gpl30</netbeans.hint.license>
 
     <!-- Dependencies -->
-    <jsr305-version>3.0.0</jsr305-version>
+    <jsr305-version>3.0.2</jsr305-version>
 
     <!-- Plugins -->
-    <findbugs-version>3.0.1</findbugs-version>
-    <findbugs-plugin-version>3.0.5</findbugs-plugin-version>
-    <fluido.skin.version>1.5</fluido.skin.version>
+    <spotbugs-version>3.1.0-RC6</spotbugs-version>
+    <spotbugs-plugin-version>3.1.0-RC4</spotbugs-plugin-version>
+    <fluido.skin.version>1.6</fluido.skin.version>
     <jxr-plugin-version>2.5</jxr-plugin-version>
     <scm-publish-plugin-version>1.1</scm-publish-plugin-version>
-    <site-plugin-version>3.4</site-plugin-version>
+    <site-plugin-version>3.6</site-plugin-version>
 
     <!-- Reporting Plugins -->
-    <project-info-reports-plugin-version>2.8</project-info-reports-plugin-version>
+    <project-info-reports-plugin-version>2.9</project-info-reports-plugin-version>
   </properties>
 
   <dependencies>
@@ -116,12 +116,12 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
+        <groupId>com.github.hazendaz.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
         <configuration>
           <threshold>Low</threshold>
           <effort>Max</effort>
-          <includeFilterFile>src/findbugs/findbugs.xml</includeFilterFile>
+          <includeFilterFile>src/spotbugs/spotbugs.xml</includeFilterFile>
         </configuration>
       </plugin>
     </plugins>
@@ -138,9 +138,9 @@
           <version>${site-plugin-version}</version>
         </plugin>
         <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>findbugs-maven-plugin</artifactId>
-          <version>${findbugs-plugin-version}</version>
+          <groupId>com.github.hazendaz.spotbugs</groupId>
+          <artifactId>spotbugs-maven-plugin</artifactId>
+          <version>${spotbugs-plugin-version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -170,8 +170,8 @@
         <configuration>
           <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
           <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
-          <webAccessUrl>https://github.com/uweplonus/findbugs-examples</webAccessUrl>
-          <developerConnection>scm:git:ssh://git@github.com:uweplonus/findbugs-examples.git</developerConnection>
+          <webAccessUrl>https://github.com/uweplonus/spotbugs-examples</webAccessUrl>
+          <developerConnection>scm:git:ssh://git@github.com:uweplonus/spotbugs-examples.git</developerConnection>
         </configuration>
         <reportSets>
           <reportSet>
@@ -185,33 +185,33 @@
         </reportSets>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <version>${findbugs-plugin-version}</version>
+        <groupId>com.github.hazendaz.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>${spotbugs-plugin-version}</version>
         <configuration>
           <threshold>Low</threshold>
           <effort>Max</effort>
-          <includeFilterFile>src/findbugs/findbugs.xml</includeFilterFile>
+          <includeFilterFile>src/spotbugs/spotbugs.xml</includeFilterFile>
         </configuration>
       </plugin>
     </plugins>
   </reporting>
 
   <scm>
-    <developerConnection>scm:git:ssh://git@github.com:uweplonus/findbugs-examples.git</developerConnection>
-    <url>https://github.com/uweplonus/findbugs-examples</url>
+    <developerConnection>scm:git:ssh://git@github.com:uweplonus/spotbugs-examples.git</developerConnection>
+    <url>https://github.com/uweplonus/spotbugs-examples</url>
   </scm>
 
   <distributionManagement>
     <site>
       <id>github</id>
-      <url>scm:git:https://github.com/uweplonus/findbugs-examples.git</url>
+      <url>scm:git:https://github.com/uweplonus/spotbugs-examples.git</url>
     </site>
   </distributionManagement>
 
   <ciManagement>
     <system>jenkins</system>
-    <url>https://ci.sw4j.net/jenkins/job/uweplonus%20Site%20Generation/job/findbugs-examples%20site/</url>
+    <url>https://ci.sw4j.net/jenkins/job/uweplonus%20Site%20Generation/job/spotbugs-examples%20site/</url>
   </ciManagement>
 
 </project>

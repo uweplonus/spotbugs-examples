@@ -1,2 +1,2 @@
-# findbugs-examples
-This are examples for bugs that are found by findbugs.
+# spotbugs-examples
+This are examples for bugs that are found by spotbugs.
