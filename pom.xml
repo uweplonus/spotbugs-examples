@@ -211,7 +211,7 @@
 
   <ciManagement>
     <system>jenkins</system>
-    <url>https://ci.sw4j.net/jenkins/job/uweplonus%20Site%20Generation/job/findbugs-example%20site/</url>
+    <url>https://ci.sw4j.net/jenkins/job/uweplonus%20Site%20Generation/job/findbugs-examples%20site/</url>
   </ciManagement>
 
 </project>
