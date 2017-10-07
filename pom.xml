@@ -48,6 +48,7 @@
     <!-- Plugins -->
     <findbugs-version>3.0.1</findbugs-version>
     <findbugs-plugin-version>3.0.5</findbugs-plugin-version>
+    <fluido.skin.version>1.5</fluido.skin.version>
     <jxr-plugin-version>2.5</jxr-plugin-version>
     <scm-publish-plugin-version>1.1</scm-publish-plugin-version>
     <site-plugin-version>3.4</site-plugin-version>
